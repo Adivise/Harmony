@@ -1,7 +1,7 @@
 ## 🎗 READ ME PLEASE
 - THIS BOT HAVE CLIENT INSIDE!
 - COMMAND `!stop` WORK WHEN RUN WITH `Start.bat`
-- YOU CAN CONTROL VOLUME IN VOLUME MIXER (File call name cmdmp3.exe)
+- YOU CAN CONTROL VOLUME IN VOLUME MIXER (Program call name cmdmp3.exe)
 
 ## 📑 Short Feature
 - [x] Music
