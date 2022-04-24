@@ -1,0 +1,21 @@
+{
+  "name": "harmony",
+  "version": "1.0.0",
+  "description": "twitch music bot client!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adivise",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@discordjs/collection": "^0.6.0",
+    "dotenv": "^16.0.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "mongoose": "^6.3.1",
+    "play-sound": "^1.1.5",
+    "tmi.js": "^1.8.5",
+    "youtube-sr": "^4.1.17",
+    "ytdl-core": "^4.11.0"
+  }
+}
