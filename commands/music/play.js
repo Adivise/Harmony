@@ -22,14 +22,22 @@ module.exports = {
             return;
         }
 
-        const url = args[0]; //https://youtu.be/2pYaIr-4pfA
-        if (!url) return client.say(channel, "Please provide a url");
-        if (!args[0].startsWith("https://www.youtu")) return client.say(channel, "Please provide youtube url!");
+        const url = args[0]; // https://youtu.be/2pYaIr-4pfA
+        if (!url) return client.say(channel, `@${tags.username}, Please provide a youtube link!`);
+        if (!url.includes("https://youtu.be/") && !url.includes("https://www.youtube.com/watch?v=")) return client.say(channel, `@${tags.username}, Please provide a youtube link!`);
         
+        /// Limit song in queue per user
+        const database = await Database.find({ user_id: tags.username }).countDocuments();
+        if (database >= 5) {
+            client.say(channel, `@${tags.username}, You have reached the limit of 5 songs in queue!`);
+            return;
+        }
+
         /// get the stream
         const dl = ytdl(url, {
             filter: 'audioonly',
             highWaterMark: 1 << 25,
+            
         });
 
         /// get the info
@@ -71,7 +79,7 @@ module.exports = {
                 client.say(channel, `💿 Starting playing: ${songInfo.title} - ${songInfo.channel.name} [${songInfo.durationFormatted}] - Requested by: @${tags.username}`);
             }
         } else { /// Download the file
-            client.say(channel, `Getting track [${songInfo.title}] please wait...`);
+            client.say(channel, `Getting track | [${songInfo.title}] please wait...`);
             console.log(`[DEBUG] Author: ${tags.username} Started, Queued Song: ${songInfo.title} - ${songInfo.channel.name} [${songInfo.durationFormatted}]`);
 
             await ffmpeg(dl)

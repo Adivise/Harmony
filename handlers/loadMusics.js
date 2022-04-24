@@ -10,11 +10,11 @@ module.exports = async (client) => {
 
     /// Function time remaining to next song
     client.nextSong = async function(time) {
-        /// wait time
+        /// Wait time
         await sleep(time);
         /// Delete first song
         await Database.deleteOne({});
-        /// Get next song
+        /// Play next song
         await client.playNext();
     }
 
@@ -37,15 +37,24 @@ module.exports = async (client) => {
         const songInfo = await ytsr.searchOne(url);
 
         if (fs.existsSync(`./cache/${songInfo.id}.mp3`)) {
+                /// Run handler nextSong
                 client.nextSong(songInfo.duration);
+                /// Play song
                 player.play(`./cache/${songInfo.id}.mp3`);
-
-                client.say(config.CHANNEL, `Starting playing: ${songInfo.title} - ${songInfo.channel.name} [${songInfo.durationFormatted}] - Requested by: ${song[0].requester}`);
+                // Send msg to channel
+                client.say(config.CHANNEL, `Starting playing: ${songInfo.title} - ${songInfo.channel.name} [${songInfo.durationFormatted}] - Requested by: @${song[0].requester}`);
                 return;
+        } else {
+            /// When can't find mp3 = skipNext
+            await client.skipNext();
         }
+    }
 
-        /// Get queue song
-        await client.nextSong(songInfo.duration);
+    /// Function to skip when can't find mp3
+    client.skipNext = async function() {
+        await Database.deleteOne({});
+
+        await client.playNext();
     }
 }
 
