@@ -4,7 +4,7 @@
 - YOU CAN CONTROL VOLUME IN VOLUME MIXER (File call name cmdmp3.exe)
 
 ## 📑 Short Feature
-- [x] Music ()
+- [x] Music
 - [x] Easy to use!
 
 ## 🚨 Have a Problem
