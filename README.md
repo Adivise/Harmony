@@ -57,7 +57,7 @@ MONGO_URI=mongodb://127.0.0.1:27017/harmony
 🤖 **Dev Commands!** (Work Only Owner!)
 - `!clearcache` - Delete all mp3 file in cache  
 - `!cleardatabase` - Delete all data in bot (use on bot getting error) 
-- `!enable` - Enable & Disable Command!
+- `!cmdenable` - Enable & Disable | Play Command!
 
 
 ## 📝 Credits
