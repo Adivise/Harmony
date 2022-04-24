@@ -1,10 +1,11 @@
 ## 🎗 READ ME PLEASE
 - THIS BOT HAVE CLIENT INSIDE!
-- COMMAND `!stop` WORK WHEN RUN WITH `Start.bat`
+- COMMAND `!stop & !skip` WORK WHEN RUN WITH `Start.bat`
 - YOU CAN CONTROL VOLUME IN VOLUME MIXER (Program call name cmdmp3.exe)
 
 ## 📑 Short Feature
-- [x] Music
+- [x] Music (Support Youtube Only!)
+- [x] Client Inside!
 - [x] Easy to use!
 
 ## 🚨 Have a Problem
@@ -15,7 +16,7 @@
 ## 📎 Requirements
 
 1. Node.js v16+ **[Download](https://nodejs.org/en/download/)**
-2. Tmi Oauth [Click Here](https://twitchapps.com/tmi/)
+2. TMI Oauth **[Click Here](https://twitchapps.com/tmi/)**
 3. MongaDB **[Download](https://www.mongodb.com/try/download/community)** (Download & install = Finish!)
 
 ## 📚 Installation
@@ -33,11 +34,16 @@ After installation finishes you can use `node .` to start the bot. or `Run Start
 Copy or Rename `.env.example` to `.env` and fill out the values:
 
 ```.env
+# Bot
 PREFIX=!
 OWNER=nanotect_
+
+# Channel
 CHANNEL=nanotect_
 USERNAME=adivise
 OAUTH=oauth:12316456445
+
+# Database
 MONGO_URI=mongodb://127.0.0.1:27017/harmony
 ```
 
@@ -51,12 +57,13 @@ MONGO_URI=mongodb://127.0.0.1:27017/harmony
 
 💫 **Music Commands!** 
 - `!play (link)` - Play music form youtube (only support! yt link!)
-- `!stop` - Stop music and clear queue (work when run with Start.bat)
+- `!stop` - Stop music and clear queue
+- `!skip` - Skip music to next song
 - `!clearqueue` - Clearqueue in bot
 
 🤖 **Dev Commands!** (Work Only Owner!)
 - `!clearcache` - Delete all mp3 file in cache  
-- `!cleardatabase` - Delete all data in bot (use on bot getting error) 
+- `!cleardatabase` - Delete all database in bot (use on bot getting stuck song, on start bot!) 
 - `!cmdenable` - Enable & Disable | Play Command!
 
 

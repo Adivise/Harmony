@@ -56,6 +56,14 @@ module.exports = async (client) => {
 
         await client.playNext();
     }
+
+    /// Function to skip song
+    client.skipSong = async function() {
+        await Database.deleteOne({});
+    }
+
+    await sleep(1500);
+    await client.playNext();
 }
 
 function sleep(ms) {
