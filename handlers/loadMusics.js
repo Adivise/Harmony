@@ -34,7 +34,7 @@ module.exports = async (client) => {
 
         const url = song[0].url;
 
-        const songInfo = await ytsr.searchOne(url);
+        const songInfo = await ytsr.getVideo(url);
 
         if (fs.existsSync(`./cache/${songInfo.id}.mp3`)) {
                 /// Run handler nextSong

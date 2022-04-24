@@ -41,7 +41,8 @@ module.exports = {
         });
 
         /// get the info
-        const songInfo = await ytsr.searchOne(url);
+        const songInfo = await ytsr.getVideo(url);
+        
         // Duration limit is 15 minutes
         if (songInfo.duration > 900000) {
             client.say(channel, `Song duration is too long (max 15 minutes)`);
