@@ -1,6 +1,6 @@
 {
   "name": "harmony",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "twitch music bot client!",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,7 @@
     "fluent-ffmpeg": "^2.1.2",
     "mongoose": "^6.3.1",
     "play-sound": "^1.1.5",
+    "simple-youtube-api": "^5.2.1",
     "tmi.js": "^1.8.5",
     "youtube-sr": "^4.1.17",
     "ytdl-core": "^4.11.0"

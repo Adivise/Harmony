@@ -17,6 +17,7 @@
 
 1. Node.js v16+ **[Download](https://nodejs.org/en/download/)**
 2. TMI Oauth **[Click Here](https://twitchapps.com/tmi/)**
+4. Youtube API **[Click Here](https://console.developers.google.com/apis/library)**
 3. MongaDB **[Download](https://www.mongodb.com/try/download/community)** (Download & install = Finish!)
 
 ## 📚 Installation
@@ -37,6 +38,7 @@ Copy or Rename `.env.example` to `.env` and fill out the values:
 # Bot
 PREFIX=!
 OWNER=nanotect_
+YOUTUBE_API=REPLACE_HERE
 
 # Channel
 CHANNEL=nanotect_
