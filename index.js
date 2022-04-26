@@ -3,6 +3,10 @@ const { Collection } = require("@discordjs/collection");
 const config = require("./settings/config.js");
 
 let options = {
+  connection: {
+    reconnect: true,
+    secure: true
+  },
   identity: {
     username: config.USERNAME,
     password: config.OAUTH,
