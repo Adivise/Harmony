@@ -5,6 +5,7 @@ const CreateTrack = new mongoose.Schema({
     song_data: Array,
     url: String,
     playable: Boolean,
+    loopable: Boolean,
 });
 
 module.exports = mongoose.model("Tracks", CreateTrack);

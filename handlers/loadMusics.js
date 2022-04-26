@@ -12,10 +12,18 @@ module.exports = async (client) => {
     client.nextSong = async function(time) {
         /// Wait time
         await sleep(time);
-        /// Delete first song
-        await Database.deleteOne({});
-        /// Play next song
-        await client.playNext();
+        
+        // Check loopable
+        const looped = await Database.find({});
+        if (looped[0].loopable) {
+            /// True = loop
+            await client.playNext();
+        } else { // False = next song!
+            /// Delete first song
+            await Database.deleteOne({});
+            /// Play next song
+            await client.playNext();
+        }
     }
 
     /// Function to play next song
@@ -25,7 +33,7 @@ module.exports = async (client) => {
         /// Check song return when no song
         if (song.length === 0) {
             console.log("[INFO] No songs in queue");
-            client.say(config.CHANNEL, "No songs in queue");
+           // client.say(config.CHANNEL, "No songs in queue");
             return;
         }
 

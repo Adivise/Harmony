@@ -2,7 +2,7 @@ const Database = require("../../settings/models/Track.js");
 
 module.exports = {
     config: {
-        name: "clearqueue",
+        name: "clear",
         aliases: ["cq"],
     },
     run: async (client, channel, tags, args) => {
