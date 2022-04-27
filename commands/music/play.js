@@ -16,7 +16,7 @@ module.exports = {
     },
     run: async (client, channel, tags, args) => {
         // 
-        const youtube = new YouTubeAPI(client.config.YOUTUBE_API);
+        const youtube = new YouTubeAPI(client.ytapi);
         /// Check if bot is enable command
         const enable = await Enable.find({});
         if (enable[0].enabled === false) {

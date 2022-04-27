@@ -23,6 +23,7 @@ const client = new twitch.client(options);
 
 client.config = require("./settings/config.js");
 client.owner = config.OWNER;
+client.ytapi = config.YOUTUBE_API;
 
 ["aliases", "commands"].forEach(x => client[x] = new Collection());
 ["loadDatabases", "loadMusics", "loadCommands", "loadEvents"].forEach(x => require(`./handlers/${x}`)(client));
